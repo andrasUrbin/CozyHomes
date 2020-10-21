@@ -1,24 +1,13 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Cozy Homes</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <h1><%= cozyhome.title %></h1>
-        <h1><%= cozyhome.location %></h1>
-        <p>
-            <form action="/cozyhomes/<%= cozyhome._id %>?_method=DELETE" method="POST">
-                <button>Delete</button>
-            </form>
-        </p>
-        <footer>
-            <a href="/cozyhomes/<%= cozyhome._id %>/edit">Edit</a>
-            <a href="/cozyhomes">All Cozy Homes</a>
-        </footer>
-    </body>
-</html>
+<% layout('layouts/boilerplate') %>
+
+<h1><%= cozyhome.title %></h1>
+<h1><%= cozyhome.location %></h1>
+<p>
+    <form action="/cozyhomes/<%= cozyhome._id %>?_method=DELETE" method="POST">
+        <button>Delete</button>
+    </form>
+</p>
+<footer>
+    <a href="/cozyhomes/<%= cozyhome._id %>/edit">Edit</a>
+    <a href="/cozyhomes">All Cozy Homes</a>
+</footer>
