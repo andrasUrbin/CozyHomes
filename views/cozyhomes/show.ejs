@@ -1,17 +1,25 @@
 <% layout('layouts/boilerplate') %>
-
-<h1><%= cozyhome.title %></h1>
-<h2><%= cozyhome.location %></h2>
-<img src="<%= cozyhome.image %>">
-<h2><%= cozyhome.description %></h2>
-<h2><%= cozyhome.price %></h2>
-
-<p>
-    <form action="/cozyhomes/<%= cozyhome._id %>?_method=DELETE" method="POST">
-        <button>Delete</button>
-    </form>
-</p>
-<footer>
-    <a href="/cozyhomes/<%= cozyhome._id %>/edit">Edit</a>
-    <a href="/cozyhomes">All Cozy Homes</a>
-</footer>
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="card mb-3">
+            <img src="<%= cozyhome.image %>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%= cozyhome.title %></h5>
+              <p class="card-text"><%= cozyhome.description %></p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><%= cozyhome.location %></li>
+              <li class="list-group-item">$<%= cozyhome.price %>/night</li>
+            </ul>
+            <div class="card-body">
+              <a class="card-link btn btn-info" href="/cozyhomes/<%= cozyhome._id %>/edit">Edit</a>
+              <form class="d-inline" action="/cozyhomes/<%= cozyhome._id %>?_method=DELETE" method="POST">
+                <button class="btn btn-danger">Delete</button>
+            </form>
+            </div>
+            <div class="card-footer text-muted">
+                2 days ago
+            </div>
+        </div>
+    </div>
+</div>
