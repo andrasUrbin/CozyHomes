@@ -1,7 +1,11 @@
 <% layout('layouts/boilerplate') %>
 
 <h1><%= cozyhome.title %></h1>
-<h1><%= cozyhome.location %></h1>
+<h2><%= cozyhome.location %></h2>
+<img src="<%= cozyhome.image %>">
+<h2><%= cozyhome.description %></h2>
+<h2><%= cozyhome.price %></h2>
+
 <p>
     <form action="/cozyhomes/<%= cozyhome._id %>?_method=DELETE" method="POST">
         <button>Delete</button>

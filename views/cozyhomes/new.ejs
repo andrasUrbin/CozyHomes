@@ -1,14 +1,35 @@
 <% layout('layouts/boilerplate') %>
-
-<form action="/cozyhomes" method="POST">
-    <div>
-        <label for="title">Title</label>
-        <input type="text" name="cozyhome[title]" id="title">
+<div class="row">
+    <h1 class="text-center">New Cozy Home</h1>
+    <div class="col-6 offset-3">
+        <form action="/cozyhomes" method="POST">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" name="cozyhome[title]" id="title">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" name="cozyhome[location]" id="location">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="image">Image Url</label>
+                <input class="form-control" type="text" name="cozyhome[image]" id="image">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price">Cozy Home Price</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">$</span>
+                    <input type="text" name="cozyhome[price]" id="price" class="form-control" placeholder="0.00" aria-label="Price" aria-describedby="price-label">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" name="cozyhome[description]" id="description"></textarea>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Add Cozy Home</button>
+            </div>
+        </form>
+        <a href="/cozyhomes">All Cozy Homes</a>
     </div>
-    <div>
-        <label for="location">Location</label>
-        <input type="text" name="cozyhome[location]" id="location">
-    </div>
-    <button>Add Cozy Home</button>
-</form>
-<a href="/cozyhomes">All Cozy Homes</a>
+</div>
